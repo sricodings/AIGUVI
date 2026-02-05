@@ -168,7 +168,7 @@ const AnalysisHub = ({ onUpdate, apiKey, lang = 'en' }) => {
                 </p>
             </header>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
                 <div className="glass-panel" style={{ padding: '0', overflow: 'hidden', border: isDragActive ? '2px solid var(--primary-color)' : '1px solid var(--card-border)' }}>
                     <div {...getRootProps()} style={{
                         height: '100%', minHeight: '450px',

@@ -164,6 +164,7 @@ body {
   margin-left: 280px;
   padding: 3rem;
   max-width: 1600px;
+  min-height: 100vh;
 }
 
 input,
@@ -188,10 +189,6 @@ input:focus {
 }
 
 .theme-toggle {
-  position: fixed;
-  top: 1.5rem;
-  right: 2.5rem;
-  z-index: 100;
   padding: 0.75rem;
   border-radius: 1rem;
   background: var(--card-bg);
@@ -209,20 +206,94 @@ input:focus {
   border-color: var(--primary-color);
 }
 
+/* Responsive Overrides */
 @media (max-width: 1024px) {
   .sidebar {
-    width: 80px;
-    padding: 2rem 1rem;
+    width: 280px !important;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
   }
 
-  .sidebar span,
-  .sidebar h2,
-  .sidebar p {
-    display: none;
+  .sidebar.mobile-visible {
+    transform: translateX(0);
   }
 
   .main-container {
-    margin-left: 80px;
+    margin-left: 0 !important;
     padding: 1.5rem;
+    padding-top: 6rem;
+  }
+
+  .ai-glow {
+    width: 300px;
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 2.22rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content>div {
+    grid-template-columns: 1fr !important;
+  }
+
+  .analysis-hub header h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .data-explorer header {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .data-explorer header>div {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .knowledge-sidebar {
+    display: none !important;
+  }
+
+  .ai-advisor-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-container {
+    padding: 1rem;
+    padding-top: 5.5rem;
+  }
+
+  .glass-panel {
+    padding: 1.5rem !important;
+  }
+
+  .btn-ai {
+    width: 100%;
+    justify-content: center;
+  }
+
+  header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  header h1 {
+    font-size: 2rem !important;
+  }
+
+  .analysis-hub .glass-panel {
+    min-height: 350px !important;
+  }
+
+  .analysis-hub .glass-panel>div {
+    padding: 2rem !important;
   }
 }

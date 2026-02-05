@@ -189,6 +189,9 @@ const DataExplorer = ({ businessData, lang = 'en' }) => {
                 .hide-scrollbar::-webkit-scrollbar { display: none; }
                 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
                 .excel-card:hover { border-color: var(--primary-color); }
+                @media (max-width: 1024px) {
+                    .excel-card [style*="position: absolute"] { display: none !important; }
+                }
             `}</style>
         </div>
     );
